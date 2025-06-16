@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Raleway&display=swap" rel="stylesheet" />
+  <link rel="icon" href="images/download-icon.ico" type="image/x-icon" />
+  <title>Mon CV</title>
+  <style>
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .futuristic-border {
+      position: relative;
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .futuristic-border::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.3), transparent);
+      z-index: -1;
+      animation: border-glow 3s linear infinite;
+    }
+
+    .futuristic-border::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.7);
+      z-index: -2;
+    }
+
+    .corner {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border-color: #38bdf8;
+      z-index: 10;
+    }
+
+    .corner-tl { top: 0; left: 0; border-top: 2px solid; border-left: 2px solid; }
+    .corner-tr { top: 0; right: 0; border-top: 2px solid; border-right: 2px solid; }
+    .corner-bl { bottom: 0; left: 0; border-bottom: 2px solid; border-left: 2px solid; }
+    .corner-br { bottom: 0; right: 0; border-bottom: 2px solid; border-right: 2px solid; }
+
+    .cv-container {
+      max-width: 600px;
+      margin: auto;
+      background-color: rgba(30, 41, 59, 0.7);
+      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .cv-container:hover {
+      transform: scale(1.02);
+    }
+
+    .cv-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+    }
+
+    .btn-download {
+      margin-top: 20px;
+      background-color: transparent;
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      color: #38bdf8;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-download::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.3), transparent);
+      transition: 0.5s;
+    }
+
+    .btn-download:hover::before {
+      left: 100%;
+    }
+
+    .btn-download:hover {
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+      transform: translateY(-2px);
+    }
+
+    @keyframes border-glow {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .text-center {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cv-container futuristic-border">
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+
+    <!-- Image du CV -->
+    <img id="cvImage" src="images/JeanChristelCV.jpg" alt="Mon CV" class="cv-image" />
+  </div>
+
+  <div class="text-center">
+    <button id="telecharger" class="btn-download">Télécharger CV</button>
+  </div>
+  
+
+
+  <script>
+    document.getElementById('telecharger').addEventListener('click', () => {
+      const imageURL = document.getElementById('cvImage').src;
+
+      fetch(imageURL)
+        .then(response => response.blob())
+        .then(blob => {
+          const url = URL.createObjectURL(blob);
+          const lien = document.createElement('a');
+          lien.href = url;
+          lien.download = 'Mon_CV.png';
+          document.body.appendChild(lien);
+          lien.click();
+          document.body.removeChild(lien);
+          URL.revokeObjectURL(url);
+        })
+        .catch(error => {
+          console.error("Erreur lors du téléchargement :", error);
+          alert("Le téléchargement a échoué.");
+        });
+    });
+  </script>
+
+</body>
+</html>

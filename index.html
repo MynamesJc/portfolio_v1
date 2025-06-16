@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Raleway&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css">
+<title>Portfolio</title>
+<style>
+
+</style>
+</head>
+<body>
+
+<!-- Overlay de bruit -->
+<div class="noise"></div>
+<!-- Grille -->
+<div class="grid"></div>
+<!-- Éléments flottants -->
+<div class="floating-elements"></div>
+
+<!-- Curseurs personnalisés -->
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">@My</div>
+      <div class="nav-links">
+        <a href="#about">À propos</a>
+        <a href="#skills">Compétences</a>
+        <a href="#projects">Projets</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="mobile-menu-btn">☰</button>
+    </nav>
+  </div>
+</header>
+
+<!-- Menu mobile -->
+<div class="mobile-menu">
+  <button class="close-menu">✕</button>
+  <a href="#about" class="btn btn-primary">À propos</a>
+  <a href="#skills" class="btn btn-primary">Compétences</a>
+  <a href="#projects" class="btn btn-primary">Projets</a>
+  <a href="#contact" class="btn btn-primary">Contact</a>
+</div>
+
+<!-- Section Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">Développeur <span>Créatif</span> & Designer</h1>
+      <p class="hero-subtitle">Je crée des expériences web et mobiles tres innovantes et futuristes qui repoussent les limites du design et de la technologie.</p>
+      <div class="cta-buttons">
+        <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+        <a href="#contact" class="btn btn-secondary">Me contacter</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="mouse">
+      <div class="wheel"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Section À propos -->
+<section id="about" class="about">
+  <div class="container">
+    <h2 class="section-title reveal">À propos de moi</h2>
+    <div class="about-content reveal">
+      <div class="about-text">
+        <div class="glass-card" style="display: flex; justify-content :space-between;">
+          <div style="text-align: left;width:280px;">
+            <h3>Qui suis-je?</h3>
+            <p style="margin-top: 8px;">Je suis un developpeur fullstak et mobile passsionné par la création d'interfaces futuristes, des experiences utilisateurs immersives et beaucoup plus de la technologie parlant de Intelligence Artificielle. Oh Oui ! C'est ma passion. J'aime surtout innover dans le secteur de l'intelligence artificielle sans parler de mon expertise en automatisme electronique qui combiné avec mes competences informatiques donnera des rendus futurisques. </p>
+            <p style="margin-top: 8px;">Nous sommes aujourd'hui dans l'ère qui tend vers le futur et moi en tant que programmeur et developpeur, je m'engage à créer un futur proche dans le présent.</p>
+            <p style="margin-top: 8px;">Ma philosophie est très simple : Se surpasser pour se demarquer du desiré du commun des mortels</p>
+            <div class="cta-buttons" style="margin-top: 20px;">
+                <a href="cv.html" class="btn btn-secondary">Télécharger CV</a>
+            </div>
+          </div>
+          <img src="images/myself.png" style="height: 400px;scale:1.9;margin-top:-80px" alt="">
+        </div>
+      </div>
+      <div class="about-image">
+        <div class="glass-card about-image-inner">
+          <!-- SVG complexe ici -->
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#00f7ff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#7000ff;stop-opacity:1" />
+              </linearGradient>
+              <clipPath id="avatarClip">
+                <circle cx="100" cy="85" r="65" />
+              </clipPath>
+            </defs>
+            <!-- Arrière-plan -->
+            <circle cx="100" cy="100" r="90" fill="none" stroke="url(#grad1)" stroke-width="1" stroke-dasharray="5,5" />
+            <circle cx="100" cy="100" r="70" fill="none" stroke="url(#grad1)" stroke-width="1" opacity="0.5" />
+            <!-- Avatar -->
+            <circle cx="100" cy="85" r="65" fill="#1a1a40" stroke="url(#grad1)" stroke-width="2" />
+            <!-- Visage abstrait -->
+            <g clip-path="url(#avatarClip)">
+              <circle cx="100" cy="70" r="25" fill="none" stroke="#00f7ff" stroke-width="1" />
+              <circle cx="85" cy="65" r="5" fill="#00f7ff" />
+              <circle cx="115" cy="65" r="5" fill="#00f7ff" />
+              <path d="M80 90 Q100 100 120 90" fill="none" stroke="#00f7ff" stroke-width="2" />
+              <!-- éléments abstraits -->
+              <path d="M60 120 L140 120" stroke="#7000ff" stroke-width="1" stroke-dasharray="5,3" />
+              <path d="M70 130 L130 130" stroke="#7000ff" stroke-width="1" stroke-dasharray="5,3" />
+              <path d="M80 140 L120 140" stroke="#7000ff" stroke-width="1" stroke-dasharray="5,3" />
+            </g>
+            <!-- éléments décoratifs -->
+            <circle cx="40" cy="40" r="10" fill="none" stroke="#00f7ff" stroke-width="1" />
+            <circle cx="160" cy="40" r="10" fill="none" stroke="#7000ff" stroke-width="1" />
+            <circle cx="40" cy="160" r="10" fill="none" stroke="#7000ff" stroke-width="1" />
+            <circle cx="160" cy="160" r="10" fill="none" stroke="#00f7ff" stroke-width="1" />
+            <!-- Symboles tech -->
+            <text x="35" y="43" fill="#00f7ff" font-family="monospace" font-size="10">&lt;/&gt;</text>
+            <text x="153" y="43" fill="#7000ff" font-family="monospace" font-size="10">{ }</text>
+            <text x="35" y="163" fill="#7000ff" font-family="monospace" font-size="10"># !</text>
+            <text x="153" y="163" fill="#00f7ff" font-family="monospace" font-size="10">* /</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section compétences -->
+<section id="skills" class="skills">
+  <div class="container">
+    <h2 class="section-title reveal">Mes compétences</h2>
+    <div class="skills-container">
+      <!-- Card compétence 1 -->
+      <div class="glass-card skill-card reveal">
+        <div class="skill-icon">
+          <!-- Icône SVG -->
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 18.1778L5.63333 14.8444V8.17778L12 4.84444L18.3667 8.17778V14.8444L12 18.1778Z" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M12 12L12 4.84444" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M18.3667 8.17778L12 12" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5.63333 8.17778L12 12" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3 class="skill-title">Design UI/UX</h3>
+        <p class="skill-description">Création d'interfaces modernes et d'expériences utilisateur intuitives et immersives.</p>
+      </div>
+      <!-- Card compétence 2 -->
+      <div class="glass-card skill-card reveal">
+        <div class="skill-icon">
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 8L3 12L7 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M17 8L21 12L17 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 4L10 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="skill-title">Développement Web</h3>
+        <p class="skill-description">Maîtrise des technologies front-end modernes pour créer des sites web performants.</p>
+      </div>
+      <div class="glass-card skill-card reveal" >
+        <div class="skill-icon">
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 8L3 12L7 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M17 8L21 12L17 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 4L10 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="skill-title">Développement d'pplication mobile</h3>
+        <p class="skill-description">Maitrise des langages flutter, dart et python  pour créer des applications mobiles innovantes et surtout avec l'integration des IA.</p>
+      </div>
+      <div class="glass-card skill-card reveal">
+        <div class="skill-icon">
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 8L3 12L7 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M17 8L21 12L17 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 4L10 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="skill-title">Programmeur IA</h3>
+        <p class="skill-description">Concepteur et programmeur des IA à des taches specifiques ou personnelles utilisant les technologies et framework python.</p>
+      </div>
+      <!-- Card compétence 3 -->
+      <div class="glass-card skill-card reveal">
+        <div class="skill-icon">
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M21 12H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M12 21V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M3 12H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M18.364 5.63604L15.5355 8.46447" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M18.364 18.364L15.5355 15.5355" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M5.63604 18.364L8.46447 15.5355" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M5.63604 5.63604L8.46447 8.46447" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="skill-title">Animation</h3>
+        <p class="skill-description">Création d'animations fluides et interactives pour enrichir l'expérience utilisateur.</p>
+      </div>
+      <!-- Card compétence 4 -->
+      <div class="glass-card skill-card reveal">
+        <div class="skill-icon">
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 5H21V19H3V5Z" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M7 9L10 12L7 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M13 15H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="skill-title">Développement Front-end</h3>
+        <p class="skill-description">Expertise en HTML, CSS, JavaScript et frameworks modernes.</p>
+      </div>
+      <!-- Card compétence 5 -->
+      
+      <!-- Card compétence 6 -->
+      <div class="glass-card skill-card reveal">
+        <div class="skill-icon">
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8.5 12H15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 8.5V15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="skill-title">Intégration API</h3>
+        <p class="skill-description">Connexion et intégration de services tiers et d'APIs pour des fonctionnalités avancées.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section Projets -->
+<section id="projects" class="projects">
+  <div class="container">
+    <h2 class="section-title reveal">Mes projets</h2>
+    <div class="projects-container">
+      <!-- Projet 1 -->
+      <div class="glass-card project-card reveal">
+        <div class="project-bg" style="height: 200px;display:flex;justify-content:space-around;overflow:hidden">
+            <img style="height:400px;transform:skew(165deg); width:30%; margin-top:30px;margin-left:-40px;border-radius:15px" src="images/mia_appli.png" alt="">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">MIA</h3>
+          <p class="project-description">Application mobile de gestion des utilisateurs WhatsApp pour des fins commerciaux et personnels controlée par une intelligence artificielle(MIA)</p>
+          <a href="#" class="project-link">
+            Version 1 continuelle
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <!-- Projet 2 -->
+      <div class="glass-card project-card reveal">
+        <div class="project-bg" style="height: 200px;display:flex;justify-content:space-around;overflow:hidden">
+            <img style="height:400px;transform:skew(165deg); width:60%; margin-top:30px;margin-left:-40px;border-radius:15px" src="images/game_app.jpg" alt="">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">SPACIAL GAME</h3>
+          <p class="project-description">Un jeux video crée avec Python module Kivy qui permet de faire naviguer une boule dans l'espace.</p>
+          <a href="#" class="project-link">
+            Version 1 continuelle
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <!-- Projet 3 -->
+      <div class="glass-card project-card reveal">
+        <div class="project-bg" style="height: 200px;display:flex;justify-content:center;overflow:hidden;padding:10px">
+            <img style="height:400px; width:100%; margin-top:30px;margin-left:0px;border-radius:5px" src="images/ecommerce_site.png" alt="">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">E-commerce Web site</h3>
+          <p class="project-description">E-commerce simple avec des fonctionnaités d'achats et de ventes evolués.</p>
+          <a href="#" class="project-link">
+            Version 1 (Premier projet)
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section Contact -->
+<section id="contact" class="contact">
+  <div class="container">
+    <h2 class="section-title reveal">Me contacter</h2>
+    <div class="contact-container" >
+      <!-- Infos contact -->
+      <div class="contact-info reveal">
+        <!-- Email -->
+        <div class="glass-card">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 5H21V19H3V5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 5L12 14L21 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Email</h4>
+              <p>jeanchristelsinzogan@gmail.com</p>
+            </div>
+          </div>
+        </div>
+        <!-- Disponibilité -->
+        <div class="glass-card">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M12 7V12L15 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Disponibilité</h4>
+              <p>Lun - Ven, 9h - 18h</p>
+            </div>
+          </div>
+        </div>
+        <!-- Localisation -->
+        <div class="glass-card">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M12 21C16 17 20 13.4183 20 10C20 6.13401 16.4183 3 12 3C7.58172 3 4 6.13401 4 10C4 13.4183 8 17 12 21Z" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Localisation</h4>
+              <p>Benin, France</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Formulaire contact -->
+      
+    </div>
+  </div>
+</section>
+
+<!-- Pied de page -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <!-- Réseaux sociaux -->
+      <div class="social-links">
+        
+        
+        <a href="#" class="social-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 3H8C5.23858 3 3 5.23858 3 8V16C3 18.7614 5.23858 21 8 21H16C18.7614 21 21 18.7614 21 16V8C21 5.23858 18.7614 3 16 3Z" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M17.5 6.5H17.51" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="#" class="social-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8.5 12H15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 8.5V15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+      <p class="copyright">© 2025 Mon Portfolio. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+  // Curseur personnalisé
+  const cursor = document.querySelector('.cursor');
+  const cursorFollower = document.querySelector('.cursor-follower');
+
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+
+    // Déplacement différé du follower
+    setTimeout(() => {
+      cursorFollower.style.left = e.clientX + 'px';
+      cursorFollower.style.top = e.clientY + 'px';
+    }, 100);
+  });
+
+  document.addEventListener('mousedown', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
+    cursorFollower.style.transform = 'translate(-50%, -50%) scale(1.2)';
+  });
+
+  document.addEventListener('mouseup', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
+  });
+
+  // Création éléments flottants
+  const floatingElementsContainer = document.querySelector('.floating-elements');
+  for (let i = 0; i < 10; i++) {
+    const el = document.createElement('div');
+    el.className = 'floating-element';
+    const size = Math.random() * 200 + 50; // entre 50 et 250 px
+    el.style.width = size + 'px';
+    el.style.height = size + 'px';
+    el.style.left = Math.random() * 100 + '%';
+    el.style.top = Math.random() * 100 + '%';
+    floatingElementsContainer.appendChild(el);
+  }
+
+  // Menu mobile
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const closeMenuBtn = document.querySelector('.close-menu');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-menu a');
+
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('active');
+  });
+
+  closeMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+  });
+
+  // Fermer le menu lors d'un clic sur un lien
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+  });
+
+  // Fonction pour révéler éléments au scroll
+  function reveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    for (let i = 0; i < reveals.length; i++) {
+      const windowHeight = window.innerHeight;
+      const elementTop = reveals[i].getBoundingClientRect().top;
+      const elementVisible = 150;
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add('active');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', reveal);
+  reveal(); // Vérification initiale
+
+  // Formulaire (pour simulation)
+  const form = document.querySelector('form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const controls = form.querySelectorAll('.form-control');
+      let valid = true;
+      controls.forEach(control => {
+        if (!control.value.trim()) {
+          valid = false;
+          control.style.borderColor = '#ff0055';
+        } else {
+          control.style.borderColor = 'var(--glass-border)';
+        }
+      });
+      if (valid) {
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        btn.textContent = 'Envoi en cours...';
+
+        setTimeout(() => {
+          btn.textContent = 'Message envoyé !';
+          btn.style.background = '#00cc88';
+
+          // Réinitialiser le formulaire
+          controls.forEach(c => c.value = '');
+
+          setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '';
+          }, 3000);
+        }, 1500);
+      }
+    });
+  }
+
+  // Défilement fluide pour les ancres
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      const target = document.querySelector(targetId);
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>
+</body>
+</html>
