@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Présentation Projet</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 0; padding: 0; background:linear-gradient(#f8f9fa 0% , #e9ecef 100%); width: 100%; height: 100%;}
+  header { 
+    align-items: center; 
+    padding: 10px 20px; 
+    background: #EAF0F2; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+position: sticky;
+top: 0;
+display: flex;
+z-index: 1000;}
+  #backBtn { margin-right: 20px; cursor: pointer; color: #333; background: #5b798356; border: none; font-size: 0.7rem;padding: 0.3rem 0.6rem ;border-radius: 5px; }
+  h1 { margin: 0; font-size: 1.4em; color: #80A5D7; }
+  
+  .carousel-container { position: relative; width: 100%; max-width: 90%; margin: 20px auto; overflow: hidden; border-radius: 0; }
+  .carousel { display: flex; transition: transform 0.5s ease; }
+  .carousel img { width: 100%; flex-shrink: 0; }
+  
+  .mode-buttons { display: flex; justify-content: center; margin: 10px 0; }
+  .mode-buttons button { margin: 0 10px; padding: 10px 20px; cursor: pointer; border: none; border-radius: 5px; }
+  .active { background-color: #80A5D7; color: #fff; }
+  .inactive { background-color: #e0e0e0; color: #000; }
+
+  .description {
+     max-width: 100%; 
+     margin: 20px auto;
+      padding: 10px 20px; 
+    text-align: left; }
+</style>
+</head>
+<body>
+
+<header>
+  <button id="backBtn"><a href="index.html">⬅ Retour</a></button>
+  <h1>E-metter-file (Beronda Application)</h1>
+</header>
+
+<div class="carousel-container">
+  <div class="carousel" id="carousel">
+    <img src="images/e_metter-file/e-metter-file1.png" alt="Projet Light 1">
+    <img src="images/e_metter-file/e-metter-file2.png" alt="Projet Light 1">
+    <img src="images/e_metter-file/e-metter-file3.png" alt="Projet Light 1">
+    <img src="images/e_metter-file/e-metter-file4.png" alt="Projet Light 1">
+    <img src="images/e_metter-file/e-metter-file5.png" alt="Projet Light 1">
+    <img src="images/e_metter-file/e-metter-file6.png" alt="Projet Light 1">
+    <img src="images/e_metter-file/e-metter-file7.png" alt="Projet Light 1">
+    <img src="images/e_metter-file/e-metter-file8.png" alt="Projet Light 1">
+    <img src="images/e_metter-file/e-metter-file9.png" alt="Projet Light 1">
+    <img src="images/e_metter-file/e-metter-file10.png" alt="Projet Light 1">
+        <img src="images/e_metter-file/e-metter-file15.png" alt="Projet Light 1">
+  </div>
+</div>
+
+<div class="mode-buttons">
+  <button id="lightBtn" class="active">Light Mode</button>
+  <button id="darkBtn" class="inactive">Dark Mode</button>
+</div>
+
+<div class="description">
+  <h2>Description du projet</h2>
+  <p>
+    Voici la description complète du projet. Il s'agit d'une application mobile et web...
+    <!-- Ajoute ici la description complète -->
+  </p>
+</div>
+
+<script>
+const carousel = document.getElementById('carousel');
+const lightBtn = document.getElementById('lightBtn');
+const darkBtn = document.getElementById('darkBtn');
+
+const lightImages = [
+"images/e_metter-file/e-metter-file1.png",
+"images/e_metter-file/e-metter-file2.png",
+"images/e_metter-file/e-metter-file3.png",
+"images/e_metter-file/e-metter-file4.png",
+"images/e_metter-file/e-metter-file5.png",
+"images/e_metter-file/e-metter-file6.png",
+"images/e_metter-file/e-metter-file7.png",
+"images/e_metter-file/e-metter-file8.png",
+"images/e_metter-file/e-metter-file9.png",
+"images/e_metter-file/e-metter-file10.png",
+"images/e_metter-file/e-metter-file15.png"
+];
+const darkImages = [
+"images/e_metter-file/e-metter-file11.png",
+"images/e_metter-file/e-metter-file12.png",
+"images/e_metter-file/e-metter-file13.png",
+"images/e_metter-file/e-metter-file14.png"];
+
+let currentIndex = 0;
+let mode = "light";
+
+// Auto slide
+function showSlide(index) {
+  carousel.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % carousel.children.length;
+  showSlide(currentIndex);
+}
+
+let slideInterval = setInterval(nextSlide, 3000);
+
+// Mode switch
+function updateCarousel(images) {
+  carousel.innerHTML = "";
+  images.forEach(src => {
+    const img = document.createElement('img');
+    img.src = src;
+    carousel.appendChild(img);
+  });
+  currentIndex = 0;
+  showSlide(currentIndex);
+}
+
+lightBtn.addEventListener('click', () => {
+  if(mode !== "light"){
+    updateCarousel(lightImages);
+    mode = "light";
+    lightBtn.classList.add('active'); lightBtn.classList.remove('inactive');
+    darkBtn.classList.add('inactive'); darkBtn.classList.remove('active');
+  }
+});
+
+darkBtn.addEventListener('click', () => {
+  if(mode !== "dark"){
+    updateCarousel(darkImages);
+    mode = "dark";
+    darkBtn.classList.add('active'); darkBtn.classList.remove('inactive');
+    lightBtn.classList.add('inactive'); lightBtn.classList.remove('active');
+  }
+});
+
+let startX;
+let isDragging = false;
+let currentTranslate = 0;
+let prevTranslate = 0;
+ // Assurez-vous d'initialiser currentIndex
+
+carousel.addEventListener('mousedown', e => {
+  isDragging = true;
+  startX = e.pageX;
+  carousel.style.transition = 'none';
+});
+
+carousel.addEventListener('mousemove', e => {
+  if (!isDragging) return;
+  const diff = e.pageX - startX;
+  carousel.style.transform = `translateX(calc(-${currentIndex * 100}% + ${diff}px))`;
+});
+
+carousel.addEventListener('mouseup', e => {
+  if (!isDragging) return;
+  isDragging = false;
+  carousel.style.transition = 'transform 0.5s ease';
+  const diff = e.pageX - startX;
+  if (diff > 50) {
+    currentIndex = (currentIndex - 1 + carousel.children.length) % carousel.children.length;
+  }
+  if (diff < -50) {
+    currentIndex = (currentIndex + 1) % carousel.children.length;
+  }
+  showSlide(currentIndex);
+});
+
+carousel.addEventListener('mouseleave', e => {
+  if (!isDragging) return;
+  isDragging = false;
+  carousel.style.transition = 'transform 0.5s ease';
+  showSlide(currentIndex);
+});
+
+// Touch events for mobile
+carousel.addEventListener('touchstart', e => {
+  isDragging = true;
+  startX = e.touches[0].pageX;
+});
+
+carousel.addEventListener('touchmove', e => {
+  if (!isDragging) return;
+  const diff = e.touches[0].pageX - startX;
+  carousel.style.transform = `translateX(calc(-${currentIndex * 100}% + ${diff}px))`;
+});
+
+carousel.addEventListener('touchend', e => {
+  if (!isDragging) return;
+  isDragging = false;
+  const diff = e.changedTouches[0].pageX - startX;
+  if (diff > 50) {
+    currentIndex = (currentIndex - 1 + carousel.children.length) % carousel.children.length;
+  }
+  if (diff < -50) {
+    currentIndex = (currentIndex + 1) % carousel.children.length;
+  }
+  showSlide(currentIndex);
+});
+
+</script>

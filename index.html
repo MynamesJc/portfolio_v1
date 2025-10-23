@@ -7,7 +7,25 @@
 <link rel="stylesheet" href="style.css">
 <title>Portfolio</title>
 <style>
+.block-image{
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+
+.block-image img{
+  width: 100%;
+  height: auto;
+}
 </style>
 </head>
 <body>
@@ -72,64 +90,21 @@
 <section id="about" class="about">
   <div class="container">
     <h2 class="section-title reveal">À propos de moi</h2>
-    <div class="about-content reveal">
-      <div class="about-text">
-        <div class="glass-card" style="display: flex; justify-content :space-between;">
-          <div style="text-align: left;width:280px;">
-            <h3>Qui suis-je?</h3>
-            <p style="margin-top: 8px;">Je suis un developpeur fullstak et mobile passsionné par la création d'interfaces futuristes, des experiences utilisateurs immersives et beaucoup plus de la technologie parlant de Intelligence Artificielle. Oh Oui ! C'est ma passion. J'aime surtout innover dans le secteur de l'intelligence artificielle sans parler de mon expertise en automatisme electronique qui combiné avec mes competences informatiques donnera des rendus futurisques. </p>
-            <p style="margin-top: 8px;">Nous sommes aujourd'hui dans l'ère qui tend vers le futur et moi en tant que programmeur et developpeur, je m'engage à créer un futur proche dans le présent.</p>
-            <p style="margin-top: 8px;">Ma philosophie est très simple : Se surpasser pour se demarquer du desiré du commun des mortels</p>
-            <div class="cta-buttons" style="margin-top: 20px;">
-                <a href="cv.html" class="btn btn-secondary">Télécharger CV</a>
-            </div>
-          </div>
-          <img src="images/myself.png" style="height: 400px;scale:1.9;margin-top:-80px" alt="">
+    <div class="about-content">
+      <div class="about-text reveal">
+        <p>Je suis un développeur passionné par la création d'expériences numériques innovantes. Avec une expertise en design UI/UX et en développement web, je m'efforce de repousser les limites du possible à chaque projet. Mon objectif est de transformer des idées complexes en solutions élégantes et fonctionnelles qui captivent les utilisateurs.</p>
+        <br>
+        <p>Fort d'une expérience diversifiée, j'ai travaillé sur une variété de projets allant des applications mobiles aux sites web interactifs. Je suis constamment à la recherche de nouvelles technologies et tendances pour rester à la pointe de l'innovation dans le domaine du développement.</p>
+        <br><br>
+        <a href="cv.html">
+          <div class="btn btn-primary">Télécharger mon CV</div>
+        </a>
+      </div>
+      <div class="about-image reveal">
+        <div class="block-image">
+          <img src="images/e_metter-file/myself.jpg" alt="À propos de moi">
         </div>
       </div>
-      <div class="about-image">
-        <div class="glass-card about-image-inner">
-          <!-- SVG complexe ici -->
-          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#00f7ff;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#7000ff;stop-opacity:1" />
-              </linearGradient>
-              <clipPath id="avatarClip">
-                <circle cx="100" cy="85" r="65" />
-              </clipPath>
-            </defs>
-            <!-- Arrière-plan -->
-            <circle cx="100" cy="100" r="90" fill="none" stroke="url(#grad1)" stroke-width="1" stroke-dasharray="5,5" />
-            <circle cx="100" cy="100" r="70" fill="none" stroke="url(#grad1)" stroke-width="1" opacity="0.5" />
-            <!-- Avatar -->
-            <circle cx="100" cy="85" r="65" fill="#1a1a40" stroke="url(#grad1)" stroke-width="2" />
-            <!-- Visage abstrait -->
-            <g clip-path="url(#avatarClip)">
-              <circle cx="100" cy="70" r="25" fill="none" stroke="#00f7ff" stroke-width="1" />
-              <circle cx="85" cy="65" r="5" fill="#00f7ff" />
-              <circle cx="115" cy="65" r="5" fill="#00f7ff" />
-              <path d="M80 90 Q100 100 120 90" fill="none" stroke="#00f7ff" stroke-width="2" />
-              <!-- éléments abstraits -->
-              <path d="M60 120 L140 120" stroke="#7000ff" stroke-width="1" stroke-dasharray="5,3" />
-              <path d="M70 130 L130 130" stroke="#7000ff" stroke-width="1" stroke-dasharray="5,3" />
-              <path d="M80 140 L120 140" stroke="#7000ff" stroke-width="1" stroke-dasharray="5,3" />
-            </g>
-            <!-- éléments décoratifs -->
-            <circle cx="40" cy="40" r="10" fill="none" stroke="#00f7ff" stroke-width="1" />
-            <circle cx="160" cy="40" r="10" fill="none" stroke="#7000ff" stroke-width="1" />
-            <circle cx="40" cy="160" r="10" fill="none" stroke="#7000ff" stroke-width="1" />
-            <circle cx="160" cy="160" r="10" fill="none" stroke="#00f7ff" stroke-width="1" />
-            <!-- Symboles tech -->
-            <text x="35" y="43" fill="#00f7ff" font-family="monospace" font-size="10">&lt;/&gt;</text>
-            <text x="153" y="43" fill="#7000ff" font-family="monospace" font-size="10">{ }</text>
-            <text x="35" y="163" fill="#7000ff" font-family="monospace" font-size="10"># !</text>
-            <text x="153" y="163" fill="#00f7ff" font-family="monospace" font-size="10">* /</text>
-          </svg>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -241,54 +216,21 @@
       <!-- Projet 1 -->
       <div class="glass-card project-card reveal">
         <div class="project-bg" style="height: 200px;display:flex;justify-content:space-around;overflow:hidden">
-            <img style="height:400px;transform:skew(165deg); width:30%; margin-top:30px;margin-left:-40px;border-radius:15px" src="images/mia_appli.png" alt="">
+            <img  src="images/e_metter-file/App.png" alt="">
         </div>
         <div class="project-content">
-          <h3 class="project-title">MIA</h3>
-          <p class="project-description">Application mobile de gestion des utilisateurs WhatsApp pour des fins commerciaux et personnels controlée par une intelligence artificielle(MIA)</p>
-          <a href="#" class="project-link">
-            Version 1 continuelle
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 12H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+          <h3 class="project-title">E-metter-Files</h3>
+          <p class="project-description">Application web et Mobile de gestions des relevés de compteurs électriques. Adaptée à toutes maisons de locations et sur n'importe quel site.</p>
+          <a href="beronda.html" class="project-link">
+            Voir la version 1
+            
           </a>
         </div>
       </div>
       <!-- Projet 2 -->
-      <div class="glass-card project-card reveal">
-        <div class="project-bg" style="height: 200px;display:flex;justify-content:space-around;overflow:hidden">
-            <img style="height:400px;transform:skew(165deg); width:60%; margin-top:30px;margin-left:-40px;border-radius:15px" src="images/game_app.jpg" alt="">
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">SPACIAL GAME</h3>
-          <p class="project-description">Un jeux video crée avec Python module Kivy qui permet de faire naviguer une boule dans l'espace.</p>
-          <a href="#" class="project-link">
-            Version 1 continuelle
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 12H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        </div>
-      </div>
+      
       <!-- Projet 3 -->
-      <div class="glass-card project-card reveal">
-        <div class="project-bg" style="height: 200px;display:flex;justify-content:center;overflow:hidden;padding:10px">
-            <img style="height:400px; width:100%; margin-top:30px;margin-left:0px;border-radius:5px" src="images/ecommerce_site.png" alt="">
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">E-commerce Web site</h3>
-          <p class="project-description">E-commerce simple avec des fonctionnaités d'achats et de ventes evolués.</p>
-          <a href="#" class="project-link">
-            Version 1 (Premier projet)
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 12H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        </div>
-      </div>
+      
     </div>
   </div>
 </section>
@@ -341,7 +283,7 @@
             </div>
             <div>
               <h4>Localisation</h4>
-              <p>Benin, France</p>
+              <p>Gbedjromede 1, Cotonou - Benin</p>
             </div>
           </div>
         </div>
