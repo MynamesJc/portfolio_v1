@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Présentation Projet</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background:linear-gradient(#f8f9fa 0% , #e9ecef 100%); width: 100%; height: 100%;}
+  header { 
+    align-items: center; 
+    padding: 10px 20px; 
+    background: #EAF0F2; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+position: sticky;
+top: 0;
+display: flex;
+z-index: 1000;}
+  #backBtn { margin-right: 20px; cursor: pointer; color: #333; background: #5b798356; border: none; font-size: 0.7rem;padding: 0.3rem 0.6rem ;border-radius: 5px; }
+  h1 { margin: 0; font-size: 1.4em; color: #80A5D7; }
+  
+  .carousel-container { position: relative;  width: 100%; max-width: 80%; margin: 20px auto; overflow: hidden; border-radius: 0; }
+  .carousel { display: flex; transition: transform 0.5s ease; max-height: 600px;}
+  .carousel img { width: 100%; flex-shrink: 0; }
+  
+  .mode-buttons { display: flex; justify-content: center; margin: 10px 0; }
+  .mode-buttons button { margin: 0 10px; padding: 10px 20px; cursor: pointer; border: none; border-radius: 5px; }
+  .active { background-color: #80A5D7; color: #fff; }
+  .inactive { background-color: #e0e0e0; color: #000; }
+
+  
+
+  .project-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 10%;
+    background: #f7f9fc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .project-section .content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .project-section .description {
+    flex: 1 1 55%;
+  }
+
+  .project-section .description h2 {
+    font-size: 1.8em;
+    color: #0a3d62;
+    margin-bottom: 20px;
+  }
+
+  .project-section .description p {
+    font-size: 1em;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+  }
+
+  .project-section .image-container {
+  flex: 1 1 40%;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: end;
+  background: none;
+  perspective: 1200px; /* profondeur pour l'effet 3D */
+}
+
+.project-section .image-container img {
+  max-width: 60%;
+  border-radius: 20px;
+  background: none;
+  transform-style: preserve-3d;
+  transform: rotateY(-25deg) rotateX(10deg);
+  animation: revolution3D 10s ease-in-out infinite alternate;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.project-section .image-container .btn_download a {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(90deg, #6ee7b7, #3dd3ff);
+  color: #021219;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.project-section .image-container .btn_download a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+}
+
+
+/* Animation 3D fluide */
+@keyframes revolution3D {
+  0% {
+    transform: rotateY(-25deg) rotateX(10deg) translateZ(0);
+  }
+  50% {
+    transform: rotateY(25deg) rotateX(5deg) translateZ(20px);
+  }
+  100% {
+    transform: rotateY(-25deg) rotateX(10deg) translateZ(0);
+  }
+}
+
+/* Effet au survol : image redressée + zoom */
+.project-section .image-container img:hover {
+  animation: none; /* stop l’animation pendant le survol */
+  transform: rotateY(0deg) rotateX(0deg) scale(1.05);
+  
+}
+
+  /* Responsive (mobile & tablette) */
+  @media (max-width: 900px) {
+    .project-section {
+      padding: 40px 5%;
+    }
+
+    .project-section .content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .project-section .description {
+      flex: 1 1 100%;
+    }
+
+    .project-section .image-container {
+      flex: 1 1 100%;
+      margin-top: 20px;
+    }
+  }
+
+
+  /* Container global */
+.project-updates .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Titres */
+.project-updates h2 {
+  font-size: 28px;
+  color: #0a3d62;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.project-updates h3 {
+  font-size: 20px;
+  color: #80A5D7;
+  margin-bottom: 12px;
+}
+
+/* Paragraphes */
+.project-updates p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #212d38;
+}
+
+/* Liste de liens */
+.project-updates ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.project-updates li {
+  margin-bottom: 12px;
+}
+
+.project-updates a {
+  color: #67b5ed;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.project-updates a:hover {
+  color: #6ee7b7;
+}
+
+/* Séparations des sections */
+.project-updates .designs,
+.project-updates .updates {
+  margin-bottom: 40px;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <button id="backBtn"><a href="index.html">⬅ Retour</a></button>
+  <h1>E-commerce website (Design)</h1>
+</header>
+
+<div class="carousel-container">
+  <div class="carousel" id="carousel">
+    <img src="images/e-commerce/e-commerce1.png" alt="Projet Light 1">
+    <img src="images/e-commerce/e-commerce2.png" alt="Projet Light 2">
+    <img src="images/e-commerce/e-commerce3.png" alt="Projet Light 3">
+    <img src="images/e-commerce/e-commerce4.png" alt="Projet Light 4">
+    <img src="images/e-commerce/e-commerce5.png" alt="Projet Light 5">
+    <img src="images/e-commerce/e-commerce6.png" alt="Projet Light 6">
+    <img src="images/e-commerce/e-commerce7.png" alt="Projet Dark 1">
+    <img src="images/e-commerce/e-commerce8.png" alt="Projet Dark 2">
+    <img src="images/e-commerce/e-commerce9.png" alt="Projet Dark 3">
+    <img src="images/e-commerce/e-commerce10.png" alt="Projet Dark 4">
+    <img src="images/e-commerce/e-commerce11.png" alt="Projet Dark 5 ">
+
+  </div>
+</div>
+
+<section class="project-section">
+  <div class="content">
+    <div class="description">
+      <h2>Description du projet</h2>
+      <p>
+       Ce site e-commerce moderne représente la partie design de l’interface administrateur, conçue pour offrir une expérience de gestion fluide, intuitive et hautement performante. Il se distingue par un design épuré, une interface ergonomique et des fonctionnalités avancées intégrant les dernières technologies web. L’administrateur peut parcourir des catégories bien structurées, effectuer des recherches intelligentes avec filtres et tri, visualiser des fiches produits détaillées avec images HD, avis clients et suggestions personnalisées. Le système de gestion des commandes et du stock est optimisé, avec un processus clair et sécurisé permettant le suivi des ventes, paiements et livraisons. Chaque administrateur dispose d’un tableau de bord complet pour gérer les produits, les utilisateurs, les commandes, les statistiques et les notifications en temps réel. Le design intègre également un mode clair/sombre, un affichage responsive, un support client intégré, un moteur de recommandation intelligent et une interface d’analyse dynamique. Grâce à une architecture sécurisée (SSL/TLS, authentification renforcée, serveurs performants), cette interface garantit confidentialité, fiabilité et rapidité. Ce site constitue ainsi une base moderne et évolutive pour la gestion d’une plateforme e-commerce professionnelle, alliant esthétique, performance et efficacité opérationnelle.
+    </p>
+    </div>
+
+    
+  </div>
+</section>
+
+<section class="project-updates">
+  <div class="container">
+    <h2>Designs et mises à jour</h2>
+
+    <!-- Liens des designs -->
+    <div class="designs">
+      <h3>Voir les designs graphiques</h3>
+      <p>
+        Découvrez les maquettes et designs du site. Cliquez sur le lien ci-dessous pour visualiser les interfaces et l'expérience utilisateur :
+      </p>
+      <ul>
+        <li><a href="https://www.figma.com/proto/exZ0giOgffvpli8w3s4k69/Untitled?page-id=0%3A1&node-id=32-18&p=f&viewport=408%2C384%2C0.05&t=GvnwFKZqV6xoE0f3-1&scaling=contain&content-scaling=fixed&starting-point-node-id=32%3A18&show-proto-sidebar=1" target="_blank">Design de l'application web</a></li>
+      </ul>
+    </div>
+
+    <!-- Prochaine mise à jour -->
+    <div class="updates">
+      <h3>Prochaine mise à jour</h3>
+      <p>
+        Pour la suite du projet, les prochaines **mises à jour** viseront à enrichir et perfectionner l’expérience globale de la plateforme. Il est prévu d’intégrer un **système d’abonnement multi-utilisateurs**, permettant à plusieurs commerçants ou gestionnaires de s’inscrire, de gérer leurs propres boutiques et d’utiliser la plateforme de manière autonome. Chaque abonné disposera de son espace personnalisé avec ses produits, ses statistiques et ses paramètres de gestion. De plus, des fonctionnalités avancées seront ajoutées, telles qu’un **module de facturation automatisé**, un **système de notifications intelligentes** pour informer en temps réel des ventes, paiements et mises à jour, ainsi qu’une **amélioration du design mobile** pour une accessibilité optimale sur tous les appareils. À moyen terme, l’objectif est d’intégrer un **assistant intelligent** pour l’analyse prédictive des ventes et la suggestion d’actions commerciales, ainsi qu’un **espace client amélioré** avec un suivi plus détaillé des commandes et des retours. Ces évolutions rendront la plateforme encore plus performante, collaborative et adaptée aux besoins des utilisateurs professionnels et administratifs.
+
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+const carousel = document.getElementById('carousel');
+const lightBtn = document.getElementById('lightBtn');
+const darkBtn = document.getElementById('darkBtn');
+
+const lightImages = [
+"images/e-commerce/e-metter-file1.png",
+"images/e-commerce/e-metter-file2.png",
+"images/e-commerce/e-metter-file3.png",
+"images/e-commerce/e-metter-file4.png",
+"images/e-commerce/e-metter-file5.png",
+"images/e-commerce/e-metter-file6.png",
+"images/e-commerce/e-metter-file7.png",
+"images/e-commerce/e-metter-file8.png",
+"images/e-commerce/e-metter-file9.png",
+"images/e-commerce/e-metter-file10.png",
+"images/e-commerce/e-metter-file15.png"
+];
+const darkImages = [
+"images/e-commerce/e-metter-file11.png",
+"images/e-commerce/e-metter-file12.png",
+"images/e-commerce/e-metter-file13.png",
+"images/e-commerce/e-metter-file14.png"];
+
+let currentIndex = 0;
+let mode = "light";
+
+// Auto slide
+function showSlide(index) {
+  carousel.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % carousel.children.length;
+  showSlide(currentIndex);
+}
+
+let slideInterval = setInterval(nextSlide, 3000);
+
+// Mode switch
+function updateCarousel(images) {
+  carousel.innerHTML = "";
+  images.forEach(src => {
+    const img = document.createElement('img');
+    img.src = src;
+    carousel.appendChild(img);
+  });
+  currentIndex = 0;
+  showSlide(currentIndex);
+}
+
+lightBtn.addEventListener('click', () => {
+  if(mode !== "light"){
+    updateCarousel(lightImages);
+    mode = "light";
+    lightBtn.classList.add('active'); lightBtn.classList.remove('inactive');
+    darkBtn.classList.add('inactive'); darkBtn.classList.remove('active');
+  }
+});
+
+darkBtn.addEventListener('click', () => {
+  if(mode !== "dark"){
+    updateCarousel(darkImages);
+    mode = "dark";
+    darkBtn.classList.add('active'); darkBtn.classList.remove('inactive');
+    lightBtn.classList.add('inactive'); lightBtn.classList.remove('active');
+  }
+});
+
+let startX;
+let isDragging = false;
+let currentTranslate = 0;
+let prevTranslate = 0;
+ // Assurez-vous d'initialiser currentIndex
+
+carousel.addEventListener('mousedown', e => {
+  isDragging = true;
+  startX = e.pageX;
+  carousel.style.transition = 'none';
+});
+
+carousel.addEventListener('mousemove', e => {
+  if (!isDragging) return;
+  const diff = e.pageX - startX;
+  carousel.style.transform = `translateX(calc(-${currentIndex * 100}% + ${diff}px))`;
+});
+
+carousel.addEventListener('mouseup', e => {
+  if (!isDragging) return;
+  isDragging = false;
+  carousel.style.transition = 'transform 0.5s ease';
+  const diff = e.pageX - startX;
+  if (diff > 50) {
+    currentIndex = (currentIndex - 1 + carousel.children.length) % carousel.children.length;
+  }
+  if (diff < -50) {
+    currentIndex = (currentIndex + 1) % carousel.children.length;
+  }
+  showSlide(currentIndex);
+});
+
+carousel.addEventListener('mouseleave', e => {
+  if (!isDragging) return;
+  isDragging = false;
+  carousel.style.transition = 'transform 0.5s ease';
+  showSlide(currentIndex);
+});
+
+// Touch events for mobile
+carousel.addEventListener('touchstart', e => {
+  isDragging = true;
+  startX = e.touches[0].pageX;
+});
+
+carousel.addEventListener('touchmove', e => {
+  if (!isDragging) return;
+  const diff = e.touches[0].pageX - startX;
+  carousel.style.transform = `translateX(calc(-${currentIndex * 100}% + ${diff}px))`;
+});
+
+carousel.addEventListener('touchend', e => {
+  if (!isDragging) return;
+  isDragging = false;
+  const diff = e.changedTouches[0].pageX - startX;
+  if (diff > 50) {
+    currentIndex = (currentIndex - 1 + carousel.children.length) % carousel.children.length;
+  }
+  if (diff < -50) {
+    currentIndex = (currentIndex + 1) % carousel.children.length;
+  }
+  showSlide(currentIndex);
+});
+
+</script>

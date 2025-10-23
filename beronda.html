@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Présentation Projet</title>
 <style>
-  body { font-family: Arial, sans-serif; margin: 0; padding: 0; background:linear-gradient(#f8f9fa 0% , #e9ecef 100%); width: 100%; height: 100%;}
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background:linear-gradient(#f8f9fa 0% , #e9ecef 100%); width: 100%; height: 100%;}
   header { 
     align-items: center; 
     padding: 10px 20px; 
@@ -18,7 +18,7 @@ z-index: 1000;}
   #backBtn { margin-right: 20px; cursor: pointer; color: #333; background: #5b798356; border: none; font-size: 0.7rem;padding: 0.3rem 0.6rem ;border-radius: 5px; }
   h1 { margin: 0; font-size: 1.4em; color: #80A5D7; }
   
-  .carousel-container { position: relative; width: 100%; max-width: 90%; margin: 20px auto; overflow: hidden; border-radius: 0; }
+  .carousel-container { position: relative; width: 100%; max-width: 80%; margin: 20px auto; overflow: hidden; border-radius: 0; }
   .carousel { display: flex; transition: transform 0.5s ease; }
   .carousel img { width: 100%; flex-shrink: 0; }
   
@@ -27,11 +27,284 @@ z-index: 1000;}
   .active { background-color: #80A5D7; color: #fff; }
   .inactive { background-color: #e0e0e0; color: #000; }
 
-  .description {
-     max-width: 100%; 
-     margin: 20px auto;
-      padding: 10px 20px; 
-    text-align: left; }
+  .carousel-container {
+  position: relative;
+  width: 90%;
+  max-width: 80%;
+  margin: 50px auto;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+/* Boutons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 22px;
+  z-index: 5;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.carousel-btn.prev {
+  left: 15px;
+}
+
+.carousel-btn.next {
+  right: 15px;
+}
+
+
+  .project-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 10%;
+    background: #f7f9fc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .project-section .content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .project-section .description {
+    flex: 1 1 55%;
+  }
+
+  .project-section .description h2 {
+    font-size: 1.8em;
+    color: #0a3d62;
+    margin-bottom: 20px;
+  }
+
+  .project-section .description p {
+    font-size: 1em;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+  }
+
+  .project-section .image-container {
+  flex: 1 1 40%;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: end;
+  background: none;
+  perspective: 1200px; /* profondeur pour l'effet 3D */
+}
+
+.project-section .image-container img {
+  max-width: 60%;
+  border-radius: 20px;
+  background: none;
+  transform-style: preserve-3d;
+  transform: rotateY(-25deg) rotateX(10deg);
+  animation: revolution3D 10s ease-in-out infinite alternate;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.project-section .image-container .btn_download a {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(90deg, #6ee7b7, #3dd3ff);
+  color: #021219;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.project-section .image-container .btn_download a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+}
+
+
+/* Animation 3D fluide */
+@keyframes revolution3D {
+  0% {
+    transform: rotateY(-25deg) rotateX(10deg) translateZ(0);
+  }
+  50% {
+    transform: rotateY(25deg) rotateX(5deg) translateZ(20px);
+  }
+  100% {
+    transform: rotateY(-25deg) rotateX(10deg) translateZ(0);
+  }
+}
+
+/* Effet au survol : image redressée + zoom */
+.project-section .image-container img:hover {
+  animation: none; /* stop l’animation pendant le survol */
+  transform: rotateY(0deg) rotateX(0deg) scale(1.05);
+  
+}
+
+  /* Responsive (mobile & tablette) */
+  @media (max-width: 900px) {
+    .project-section {
+      padding: 40px 5%;
+    }
+
+    .project-section .content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .project-section .description {
+      flex: 1 1 100%;
+    }
+
+    .project-section .image-container {
+      flex: 1 1 100%;
+      margin-top: 20px;
+    }
+  }
+
+
+  /* Container global */
+.project-updates .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Titres */
+.project-updates h2 {
+  font-size: 28px;
+  color: #0a3d62;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.project-updates h3 {
+  font-size: 20px;
+  color: #80A5D7;
+  margin-bottom: 12px;
+}
+
+/* Paragraphes */
+.project-updates p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #212d38;
+}
+
+/* Liste de liens */
+.project-updates ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.project-updates li {
+  margin-bottom: 12px;
+}
+
+.project-updates a {
+  color: #67b5ed;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.project-updates a:hover {
+  color: #6ee7b7;
+}
+
+/* Séparations des sections */
+.project-updates .designs,
+.project-updates .updates {
+  margin-bottom: 40px;
+}
+
+
+.nb {
+  background: linear-gradient(135deg, #f0f8ff 0%, #e6f0ff 100%);
+  border: 1px solid #d0e1ff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nb:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.nb p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
+}
+
+.nb .host {
+  font-weight: 600;
+  color: #0057ff;
+}
+
+.nb .link-site {
+  color: #0078ff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.nb .link-site:hover {
+  color: #00a2ff;
+  text-decoration: underline;
+}
+
+.nb .email-link {
+  color: #00b894;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nb .email-link:hover {
+  text-decoration: underline;
+  color: #00d8a7;
+}
+
+.nb .phone {
+  font-weight: 600;
+  color: #555;
+}
+
+
 </style>
 </head>
 <body>
@@ -42,19 +315,23 @@ z-index: 1000;}
 </header>
 
 <div class="carousel-container">
+  <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
+
   <div class="carousel" id="carousel">
     <img src="images/e_metter-file/e-metter-file1.png" alt="Projet Light 1">
-    <img src="images/e_metter-file/e-metter-file2.png" alt="Projet Light 1">
-    <img src="images/e_metter-file/e-metter-file3.png" alt="Projet Light 1">
-    <img src="images/e_metter-file/e-metter-file4.png" alt="Projet Light 1">
-    <img src="images/e_metter-file/e-metter-file5.png" alt="Projet Light 1">
-    <img src="images/e_metter-file/e-metter-file6.png" alt="Projet Light 1">
-    <img src="images/e_metter-file/e-metter-file7.png" alt="Projet Light 1">
-    <img src="images/e_metter-file/e-metter-file8.png" alt="Projet Light 1">
-    <img src="images/e_metter-file/e-metter-file9.png" alt="Projet Light 1">
-    <img src="images/e_metter-file/e-metter-file10.png" alt="Projet Light 1">
-        <img src="images/e_metter-file/e-metter-file15.png" alt="Projet Light 1">
+    <img src="images/e_metter-file/e-metter-file2.png" alt="Projet Light 2">
+    <img src="images/e_metter-file/e-metter-file3.png" alt="Projet Light 3">
+    <img src="images/e_metter-file/e-metter-file4.png" alt="Projet Light 4">
+    <img src="images/e_metter-file/e-metter-file5.png" alt="Projet Light 5">
+    <img src="images/e_metter-file/e-metter-file6.png" alt="Projet Light 6">
+    <img src="images/e_metter-file/e-metter-file7.png" alt="Projet Light 7">
+    <img src="images/e_metter-file/e-metter-file8.png" alt="Projet Light 8">
+    <img src="images/e_metter-file/e-metter-file9.png" alt="Projet Light 9">
+    <img src="images/e_metter-file/e-metter-file10.png" alt="Projet Light 10">
+    <img src="images/e_metter-file/e-metter-file15.png" alt="Projet Light 11">
   </div>
+
+  <button class="carousel-btn next" id="nextBtn">&#10095;</button>
 </div>
 
 <div class="mode-buttons">
@@ -62,13 +339,68 @@ z-index: 1000;}
   <button id="darkBtn" class="inactive">Dark Mode</button>
 </div>
 
-<div class="description">
-  <h2>Description du projet</h2>
+<div class="nb">
   <p>
-    Voici la description complète du projet. Il s'agit d'une application mobile et web...
-    <!-- Ajoute ici la description complète -->
+    Ce site est hébergé <strong>temporairement</strong> sur <span class="host">Pagekite.me</span> :
+    <a href="https://beronda.pagekite.me/e-metter-file/web/" target="_blank" class="link-site">Visitez Beronda</a><br><br>
+    Pour le visualiser, envoyez-moi un email à
+    <a href="mailto:jeanchristelsinzogan@gmail.com" class="email-link">jeanchristelsinzogan@gmail.com</a>
+    ou appelez-moi au <span class="phone">+229 0150785871</span> pour demander l’ouverture d’une session de visualisation visiteur.
+    <br><br><em>Merci pour votre compréhension et votre intérêt !</em>
   </p>
 </div>
+
+<section class="project-section">
+  <div class="content">
+    <div class="description">
+      <h2>Description du projet</h2>
+      <p>
+        Le logiciel de gestion et de création des relevés de compteurs électriques est une application complète, moderne et intuitive, conçue pour digitaliser la collecte, le suivi et la gestion des données de consommation électrique sur tout type de site (résidentiel, industriel ou administratif). Il centralise l’ensemble des opérations liées aux relevés — de la saisie à la génération automatique de rapports — tout en offrant une traçabilité complète et une gestion efficace des agents, des sites et des compteurs. Grâce à une interface ergonomique disponible en mode clair et sombre, les utilisateurs peuvent facilement naviguer entre les différentes fonctionnalités : création et consultation des relevés, suivi de l’historique, gestion des comptes personnels et des agents, ainsi que réception de notifications intelligentes en temps réel pour les anomalies, validations ou interventions à effectuer.
+        <br><br>
+        Construit sur une architecture web moderne et sécurisée, le système intègre des outils d’authentification, de rôles et permissions, garantissant la confidentialité et la fiabilité des données. Il permet aux administrateurs de superviser les activités, d’analyser les performances et de générer des rapports précis pour optimiser la gestion énergétique. En combinant automatisation, accessibilité et performance, ce logiciel constitue une solution efficace et évolutive pour toute structure souhaitant moderniser et fiabiliser la gestion de ses relevés de compteurs électriques.
+      </p>
+    </div>
+
+    <div class="image-container">
+      <img src="images/e_metter-file/appli.png" alt="Illustration compteur électrique">
+      <div class="btn_download">
+        <a href="images/e_metter-file/app.apk" download="MonApplication.apk">
+          Télécharger l'application
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="project-updates">
+  <div class="container">
+    <h2>Designs et mises à jour</h2>
+
+    <!-- Liens des designs -->
+    <div class="designs">
+      <h3>Voir les designs graphiques</h3>
+      <p>
+        Découvrez les maquettes et designs de l'application web et mobile. Cliquez sur les liens ci-dessous pour visualiser les interfaces et l'expérience utilisateur :
+      </p>
+      <ul>
+        <li><a href="https://www.figma.com/proto/TfQEYVYpxiBk4kOtrzbZKw/Untitled?page-id=0%3A1&node-id=294-2354&p=f&viewport=264%2C309%2C0.08&t=MbwIjVezCYlBv59Y-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=7%3A51&show-proto-sidebar=1" target="_blank">Design de l'application mobile</a></li>
+        <li><a href="https://www.figma.com/proto/TfQEYVYpxiBk4kOtrzbZKw/Untitled?page-id=0%3A1&node-id=526-2806&p=f&viewport=264%2C309%2C0.08&t=v1MPlo8704wl5XqQ-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=7%3A51&show-proto-sidebar=1" target="_blank">Design de l'application web</a></li>
+      </ul>
+    </div>
+
+    <!-- Prochaine mise à jour -->
+    <div class="updates">
+      <h3>Prochaine mise à jour</h3>
+      <p>
+        Lors de la prochaine mise à jour, nous allons intégrer un <strong>système d'abonnement</strong> qui permettra à plusieurs bailleurs de s'inscrire et d'utiliser simultanément l'application web et mobile.  
+        Cela offrira une meilleure gestion multi-utilisateurs et améliorera l'expérience pour toutes les parties prenantes.  
+        D'autres fonctionnalités et optimisations seront également ajoutées pour rendre l'application plus performante et intuitive.
+      </p>
+    </div>
+  </div>
+</section>
+
+
 
 <script>
 const carousel = document.getElementById('carousel');
@@ -108,6 +440,22 @@ function nextSlide() {
 }
 
 let slideInterval = setInterval(nextSlide, 3000);
+
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + carousel.children.length) % carousel.children.length;
+  showSlide(currentIndex);
+  clearInterval(slideInterval);
+  slideInterval = setInterval(nextSlide, 3000);
+});
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % carousel.children.length;
+  showSlide(currentIndex);
+  clearInterval(slideInterval);
+  slideInterval = setInterval(nextSlide, 3000);
+});
+
 
 // Mode switch
 function updateCarousel(images) {
@@ -202,5 +550,6 @@ carousel.addEventListener('touchend', e => {
   }
   showSlide(currentIndex);
 });
+
 
 </script>
